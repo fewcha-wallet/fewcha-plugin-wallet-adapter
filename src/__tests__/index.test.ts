@@ -1,12 +1,12 @@
-import { AptosWallet } from "../index";
+import { FewchaWallet } from "../index";
 
 /*
 Basic tests to make sure basic variables and functions are defined on the wallet
 
-Note: change AptosWallet to match your class name
+Note: change FewchaWallet to match your class name
 */
-describe("AptosWallet", () => {
-  const wallet = new AptosWallet();
+describe("FewchaWallet", () => {
+  const wallet = new FewchaWallet();
 
   test("defines name", () => {
     expect(typeof wallet.name).toBe("string");
