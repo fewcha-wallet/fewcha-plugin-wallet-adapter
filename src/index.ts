@@ -7,7 +7,7 @@ import type {
   SignMessageResponse,
   WalletName,
 } from "@aptos-labs/wallet-adapter-core";
-import { Types } from "aptos";
+import { TxnBuilderTypes, Types } from "aptos";
 import { IWeb3Provider } from "@fewcha/web3";
 
 const parseError = (code: number) => {
@@ -159,6 +159,14 @@ export class FewchaWallet implements AdapterPlugin {
     } catch (error: any) {
       throw error;
     }
+  }
+
+  async signAndSubmitBCSTransaction(
+    _transaction: TxnBuilderTypes.TransactionPayload,
+    _options?: any
+  ): Promise<{ hash: Types.HexEncodedBytes }> {
+    // TODO: support signAndSubmitBCSTransaction in web3SDK
+    throw "not supported yet";
   }
 
   async signMessage(message: SignMessagePayload): Promise<SignMessageResponse> {
